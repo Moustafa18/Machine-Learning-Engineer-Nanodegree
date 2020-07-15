@@ -1,0 +1,16 @@
+PYPI has a regular repo as test repo
+
+1 - upload package to test repository: test.pypi.org
+2 - upload package to regular repo : pypi.org
+
+Steps:
+
+1 - cd binomial_package_files
+2 - python setup.py sdist
+3 - pip install twine
+# commands to upload to the pypi test repository
+4 - twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+5 - pip install --index-url https://test.pypi.org/simple/ dsnd-probability
+# command to upload to the pypi repository
+6 - twine upload dist/*
+7 - pip install dsnd-probability #note that you rename dsnd_probability with _ not -
