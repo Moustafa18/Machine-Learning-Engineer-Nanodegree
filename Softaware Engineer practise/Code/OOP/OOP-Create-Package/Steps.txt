@@ -1,0 +1,68 @@
+1 - Run command on the project directory: pip install .
+2 - from distributions import Gaussian
+3 - Use the class as you want
+
+if you want to download it on local computer, you have to use virtual enviroment 
+
+A virtual environment is a silo-ed Python installation apart from your main Python installation. 
+That way you can install packages and delete the virtual environment without affecting your main Python installation
+1 - conda
+2 - venv
+3 - pip ()
+conda manages packages and manages environments:
+
+1 - As a package manager, conda makes it easy to install Python packages especially for data science. 
+    For instance, typing conda install numpy will install the numpy package.
+2 - As an environment manager, conda allows you to create silo-ed Python installations. 
+    With an environment manager, you can install packages on your computer without affecting your main Python installation.
+3 - Deploy:
+	3.1 - conda create --name environmentname
+	3.2 - source activate environmentname
+	3.3 - conda install numpy
+
+venv come with python 3 manages packages and manages environments:
+
+Pip can only manage Python packages whereas conda is a language agnostic package manager. 
+In fact, conda was invented because pip could not handle data science packages that depended on libraries 
+
+Deploy of both like that:
+1 - python3 -m venv environmentname
+2 - source environmentname/bin/activate
+3 - pip install numpy
+
+Which to Choose
+Whether you choose to create environments with venv or conda will depend on your use case. 
+Conda is very helpful for data science projects, but conda can make generic Python software development 
+a bit more confusing; that's the case for this project.
+
+If you create a conda environment, activate the environment, and then pip install the distributions package, 
+you'll find that the system installs your package globally rather than in your local conda environment. 
+
+However, if you create the conda environment and install pip simultaneously, 
+you'll find that pip behaves as expected installing packages into your local environment:
+
+conda create --name environmentname pip
+
+
+On the other hand, using pip with venv works as expected. 
+Pip and venv tend to be used for generic software development projects including web development. 
+For this lesson on creating packages, 
+you can use conda or venv if you want to develop locally on your computer and install your package.
+
+The video below shows how to use venv, which is what we recommend for this project.
+
+on windows
+
+1 - conda update python
+2 - python -m venv venv_name
+3 - venv_name/Scripts/activate.bat
+4 - go to the package directory
+5 - pip install .
+
+on ubuntu
+
+1 - conda update python
+2 - python -m venv venv_name
+3 - source venv_name/Lib/activate
+4 - go to the package directory
+5 - pip install .
