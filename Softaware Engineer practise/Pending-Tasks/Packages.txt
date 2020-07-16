@@ -1,0 +1,6 @@
+1 - create a package that does basic matrix algebra such as addition, subtraction, multiplication, matrix inversion, etc.
+2 - make a calculus package that implements algorithms such as Newton's method
+3 - create a package built on top of Matplotlib or Seaborn that creates well-formatted, well labeled visualizations
+4 - create an object-oriented package to play a game of tic-tac-toe between two human players.
+5 - make a number guessing game where the computer randomly chooses an integer 
+    and then tells a human player if a guess is higher or lower than the number
