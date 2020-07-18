@@ -1,0 +1,39 @@
+XGBoost-in compettions
+
+1 - There's a list of winning XGBoost-based solutions to a variety of competitions, at the linked XGBoost repository.
+https://github.com/dmlc/xgboost/tree/master/demo#machine-learning-challenge-winning-solutions
+
+++++++++++
+Estimators
+++++++++++
+
+1 - You can read the documentation on estimators for more information about this object. 
+		https://sagemaker.readthedocs.io/en/latest/estimators.html
+2 - Essentially, the Estimator is an object that specifies some details about how a model will be trained. 
+It gives you the ability to create and deploy a model.
+
++++++++++++++
+Training Jobs
++++++++++++++
+
+A training job is used to train a specific estimator.
+
+When you request a training job to be executed you need to provide a few items:
+
+1 - A location on S3 where your training (and possibly validation) data is stored,
+2 - A location on S3 where the resulting model will be stored (this data is called the model artifacts),
+3 - A location of a docker container (certainly this is the case if using a built in algorithm) to be used for training
+4 - A description of the compute instance that should be used.
+
+Once you provide all of this information, SageMaker will executed the necessary instance (CPU or GPU), 
+load up the necessary docker container and execute it, passing in the location of the training data. 
+Then when the container has finished training the model, the model artifacts are packaged up and stored on S3.
+
++++++++++++
+Transformer
++++++++++++
+
+You can read more about the transform and wait functions, in the transformer documentation. 
+In this case, the transformer is used to create a transform job and evaluate a trained model. 
+The transform function takes in the location of some test data, and some information about 
+how that test data is formatted.

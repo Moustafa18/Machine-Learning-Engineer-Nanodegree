@@ -1,0 +1,25 @@
+Boston Housing Data
+
+1 - For our very first time using SageMaker we will be looking at the problem of estimating the median cost of 
+a house in the Boston area using the Boston Housing Dataset.
+
+2 - We will be using this dataset often throughout this module as it provides a great example on which to try out all of 
+SageMaker's features.
+
+3 - In addition, we will be using a random tree model. 
+In particular, we will be using the XGBoost algorithm. 
+The details of XGBoost are beyond the scope of this module as we are interested in learning about SageMaker. 
+If you would like to learn more about XGBoost I would recommend starting with the documentation 
+which you can find at https://xgboost.readthedocs.io/en/latest/
+
+The notebook we will be working though in this video and in the following two videos can be found in the Tutorial directory
+and is called Boston Housing - XGBoost (Batch Transform) - High Level.ipynb. 
+Now that you know why Boston Housing and XGBoost are in the name, let's talk a bit about the rest of it.
+
+First, Batch Transform is the method we will be using to test our model once we have trained it. 
+This is something that we will discuss a little more later on.
+
+Second, High Level describes the API we will be using to get SageMaker to perform various machine learning tasks. 
+In particular, it refers to the Python SDK whose documentation can be found here: 
+https://sagemaker.readthedocs.io/en/latest/. 
+This high level approach simplifies a lot of the details when working with SageMaker and can be very useful.
