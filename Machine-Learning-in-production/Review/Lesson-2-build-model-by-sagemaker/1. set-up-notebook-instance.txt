@@ -1,0 +1,8 @@
+1 - access the aws services
+2 - select sagemaker
+3 - selecting Notebook Instances and clicking on Create notebook instance.
+4 - using ml.t2.medium should be all that is necessary for the notebooks that you will encounter in this module. 
+    In addition, an ml.t2.medium instance is covered under the free tier.
+5 - under IAM role select Create a new role. You should get a pop-up window that looks like the one below. 
+    The only change that needs to be made is to select None under S3 buckets you specify
+6 - click on Create notebook instance.

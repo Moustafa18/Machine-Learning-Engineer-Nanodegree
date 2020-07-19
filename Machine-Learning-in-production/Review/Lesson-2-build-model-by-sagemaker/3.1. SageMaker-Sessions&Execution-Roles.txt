@@ -1,0 +1,12 @@
+SageMaker has some unique objects and terminology that will become more familiar over time. 
+There are a few objects that you'll see come up, over and over again:
+
+1 - Session - is a special object that allows you to do things like manage data in S3 and create and train any machine learning models; 
+you can read more about the functions that can be called on a session, at this documentation (https://sagemaker.readthedocs.io/en/latest/session.html). 
+The upload_data function should be close to the top of the list! 
+You'll also see functions like train, tune, and create_model all of which we'll go over in more detail, later.
+
+2 - Role - Sometimes called the execution role, this is the IAM role that you created when you created your notebook instance. 
+The role basically defines how data that your notebook uses/creates will be stored. 
+You can even try printing out the role with print(role) to see the details of this creation.
+

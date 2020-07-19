@@ -1,0 +1,7 @@
+1 - Open Jupyter
+2 - click on the new drop down menu and select terminal
+3 - By default, the working directory of the terminal instance is the home directory, 
+    however, the Jupyter notebook hub's root directory is under SageMaker
+4 - cd SageMaker
+5 - git clone https://github.com/udacity/sagemaker-deployment.git
+6 - exit

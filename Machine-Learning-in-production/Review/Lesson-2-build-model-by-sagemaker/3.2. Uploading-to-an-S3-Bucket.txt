@@ -1,0 +1,16 @@
+Another SageMaker detail that is new is the method of data storage. 
+In these instances, we'll be using S3 buckets for data storage.
+
+S3 is a virtual storage solution that is mostly meant for data to be written to few times and read from many times. 
+This is, in some sense, the main workhorse for data storage and transfer when using Amazon services. 
+These are similar to file folders that contain data and metadata about that data, 
+such as the data size, date of upload, author, and so on.
+
+S3 stands for Simple Storage Service (S3).
+
+After you upload data to a session, you should see that an S3 bucket is created, 
+as indicated by an output like the following:
+If you'd like to learn more about how we're creating a csv file, 
+you can check out the pandas documentation (https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html).
+Above, we are just concatenating x and y data sets as columns of data (axis=1) and 
+converting that pandas dataframe into a csv file using .to_csv.
