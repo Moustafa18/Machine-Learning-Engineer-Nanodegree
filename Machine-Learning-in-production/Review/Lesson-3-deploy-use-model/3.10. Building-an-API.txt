@@ -1,4 +1,5 @@
-1- amazon api gateway\
+1 - amazon api gateway\
 2 - create new method with post request
 3 - get it the access to lambda function
 4 - throught the url you can access the model from web page
+5 - deploy the api by click on the drop down list

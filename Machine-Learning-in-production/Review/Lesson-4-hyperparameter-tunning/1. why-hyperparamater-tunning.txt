@@ -1,0 +1,23 @@
++++++++++++++++++++++++
+hyperparameter puropose
++++++++++++++++++++++++
+1 -  improve our models using one of SageMaker's features.
+2 - Generally the approach to finding the best parameters is to train a bunch of models with different parameters and 
+then choose the model that works best.
+3 - SageMaker provides an automated way of doing this.
+
+++++++++++++++++++++++++++
+using sagemaker to do that
+++++++++++++++++++++++++++
+
+1 - SageMaker provides an automated way of doing this
+2 - SageMaker also does this in an intelligent way using Bayesian optimization
+3 - you specify ranges for our hyperparameters.
+4 - SageMaker will explore different choices within those ranges, increasing the performance of our model over time.
+
+++++++++++++++++++++++++++
+Amazon's CloudWatch service
+++++++++++++++++++++++++++
+
+1 - CloudWatch provides a user interface through which we can examine various logs generated during training.
+2 - This can be especially useful when diagnosing errors.

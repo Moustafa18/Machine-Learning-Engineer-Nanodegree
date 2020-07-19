@@ -1,0 +1,42 @@
+
++++++++++++++++++++++++++++++++++++++++++
+hyperparameter tuning inside of SageMaker
++++++++++++++++++++++++++++++++++++++++++
+
+1 - we start with a base collection of hyperparameters which describe a default model. 
+2 - We then give some additional set of hyperparameters ranges. 
+3 - These ranges tell SageMaker which hyperparameters can be varied, with the goal being to improve the default model.
+
+++++++++++++++++
+compare models
+++++++++++++++++
+
+
+1 - specifying a metric. 
+2 - describe how many total models we want SageMaker to train.
+
++++++
+steps
++++++
+1 - set a default hyperparameter
+2 - add the hyperparameters discussed on notebook
+3 - fit the default hyperparameter with training data and the ranges disccuused on 2 with validation data
+4 - get the best training model
+5 - use attach method to get the best training model
+5 - use the transformer to test the model
+
++++++
+Note:
++++++
+1 - when creating a tuned model in this notebook, we also saw how the attach method can be used to create an Estimator object 
+    which is attached to an already completed training job. This method is useful in other situations as well.
+
+2 - You will notice that throughout this module we train the same model multiple times. 
+
+In most of the Boston Housing notebooks
+
+1 - we train an XGBoost model with the same hyperparameters.
+2 - why ? The reason for this is so that each notebook is self contained and can be run even if you haven't run the other notebooks.
+
+In your case however, you've probably already created an XGBoost model on the Boston Housing training set with the standard hyperparameters. 
+If you wanted to, you could use the attach method to avoid having to re-train the model.

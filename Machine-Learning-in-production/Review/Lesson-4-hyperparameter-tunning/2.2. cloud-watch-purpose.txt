@@ -1,0 +1,11 @@
+++++
+RMSE
+++++
+
+1 - when you fit the model, it is best for rmse to decrease
+2 - if some error occurs, notebook will not show any logs
+3 - use the cloud watch
+	3.1 - sagemaker
+	3.2 - training jobs
+	3.3 - select job
+	3.4 - monitor logs
