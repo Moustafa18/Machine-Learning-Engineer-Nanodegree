@@ -1,9 +1,8 @@
-For our purposes an endpoint is just a URL. Instead of returning a web page, like a typical url, this endpoint URL returns the results of performing inference. 
-In addition, we are able to send data to this URL so that our model knows what to perform inference on. 
-We won't go too far into the details of how this is all set up since SageMaker does most of the heavy lifting for us.
 
-An important aspect that we will encounter is that SageMaker endpoints are secured. In this case, that means that only other AWS services with permission to access SageMaker endpoints can do so.
+++++++++++++++++++++++++++++++++
+SageMaker endpoints are secured.
+++++++++++++++++++++++++++++++++ 
 
-To start with, we won't need to worry about this too much since we will be working inside of a SageMaker notebook and so we will be able to access our deployed endpoints easily.
+--> this means that only other AWS services with permission to access SageMaker endpoints can do so.
 
 Later on we will talk about how to set things up so that a simple web app, which doesn't need to be given special permission, can access our SageMaker endpoint.

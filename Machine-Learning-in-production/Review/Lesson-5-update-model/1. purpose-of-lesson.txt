@@ -1,0 +1,33 @@
++++++++
+purpose
++++++++
+
+Take a look at updating an existing endpoint so that it conforms to a different endpoint configuration.
+
++++++++
+Reasons
++++++++
+1 - Performing an A/B test and updating a model which is no longer performing as well.
+
+++++++++++++++++++++++++++++++++++++
+Steps to compare two different model
+++++++++++++++++++++++++++++++++++++
+
+1 - Performing an A/B test between two different models.
+2 - once we've decided on a model to use, updating the existing endpoint so that it only sends data to a single model.
+
++++++++++++++++++++++++++++++++++++++++++
+Steps to improve your model with new data
++++++++++++++++++++++++++++++++++++++++++
+1 - we've built a model and begun using it, 
+2 - the assumptions on which our model is built begin to change.
+3 - we need to modify our model, often this means re-training it.
+4 - we'd like to update the existing endpoint without having to shut it down. 
+5 - Fortunately, SageMaker allows us to do this in a straightforward way.
+
+++++++++
+Example
+++++++++
+in the sentiment analysis examples that we've looked at our models are based on a vocabulary consisting 
+of the 5000 most frequently appearing words in the training set. But what happens if, over time, the usage of words changes? Then our model may not be as accurate.
+

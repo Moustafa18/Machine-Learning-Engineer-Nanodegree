@@ -1,0 +1,30 @@
+++++++++++++++++++
+Boston house price
+++++++++++++++++++
+1 - we will create an XGBoost model similar to the ones that we have constructed in the past in order to predict the median housing cost in Boston.
+2 - The difference this time is that we are using a hybrid approach, including both the high level and low level functionality:
+	2.1 - the high level approach to train a model (to produce model artifacts) 
+	2.2 - the low level approach to construct the model itself and to construct the endpoint configuration. 
+	      The reason for this is so that we can have more control over how our endpoint behaves. 
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+we need to create another model with new machine learning technique
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1 - using linear model will improve the accuracy
+2 - return result in json formate not csv format as on XGBoost 
+
+
+
+++++++++++++++
+important note
+++++++++++++++
+
+Depending on the application you have in mind for a particular machine learning model, 
+
+1 - accuracy may not always be the metric you wish to optimize. 
+2 - There may be some other constraints on getting the model to work in production. 
+	2.1 -  your model may not be very easy to interpret or maybe performing inference for a particular model may be too costly.
+3 - At all you want to try alternative models. 
+
+In the example we are working on here we construct a linear learner model as an alternative to the previously created XGBoost model.
+

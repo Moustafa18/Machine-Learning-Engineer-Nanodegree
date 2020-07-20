@@ -1,4 +1,6 @@
+++++++++++++++++++++++++++++++++++++++++++++++++++
 Part A: Create an IAM Role for the Lambda function
+++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Since we want the Lambda function to call a SageMaker endpoint, 
 we need to make sure that it has permission to do so. To do this, 
@@ -10,8 +12,9 @@ we will construct a role that we can later give the Lambda function.
 4 - Amazonsagemakerfullaccess permission
 5 - give it a name like LambdaSagermakerRole 
 
-
++++++++++++++++++++++++++++++++++
 Part B: Create a Lambda function
++++++++++++++++++++++++++++++++++
 
 Now it is time to actually create the Lambda function. 
 Remember from earlier that in order to process the user provided input and send it to our endpoint 

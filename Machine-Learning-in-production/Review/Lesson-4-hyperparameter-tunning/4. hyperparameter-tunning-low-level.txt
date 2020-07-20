@@ -1,0 +1,13 @@
++++++++++++++++++++++++++++++++++++++++++++++
+hyperparameter tuning job using the low level
++++++++++++++++++++++++++++++++++++++++++++++
+ 
+it requires two different things:
+
+1 - Training job that will be used as the base job for the hyperparameter tuning task. 
+such that it is almost exactly the same as the standard training job description 
+except that instead of specifying HyperParameters we specify StaticHyperParameters. 
+That is, the hyperparameters that we do not want to change in the various iterations and objective like regression(linare) or logisitic.
+
+2 - Tuning job includes the different ranges of hyperparameters that we do want SageMaker to vary, 
+    in addition to the total number of jobs we want to have created and how to determine which model is best.
