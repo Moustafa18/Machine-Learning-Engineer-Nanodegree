@@ -1,0 +1,42 @@
+++++++++++++
+Case Studies
+++++++++++++
+ 
+1 - Population Segmentation using SageMaker:
+
+	1.1 - Looking at a portion of US census data (https://www.census.gov/data.html)
+	1.2 - Using a combination of unsupervised learning methods to extract meaningful components from that data 
+	      and group regions by similar census-recorded characteristics. 
+	1.3 - This case study will be a deep dive into Principal Components Analysis (PCA) and K-Means clustering methods
+	1.4 - the end result will be groupings that are used to inform things like localized marketing campaigns and voter campaign strategies.
+
+2 - Detecting Credit Card Fraud
+
+	2.1 - This case will demonstrate how to use supervised learning techniques, specifically SageMaker’s LinearLearner, 
+	2.2 - for fraud detection. The payment transaction dataset we'll work with is unbalanced with many more examples of valid transactions vs. fraudulent
+ 		2.2.1 - solution: you will investigate methods for compensating for this imbalance  and tuning your model to improve its performance according to a specific product goal.
+
+3 - Time-Series Forecasting:
+
+	3.1 - This case demonstrates how to train SageMaker's DeepAR model for forecasting predictions over time. 
+	3.2 - Time-series forecasting is an active area of research because a good forecasting algorithm often takes in a number of different features 
+	      and accounts for seasonal or repetitive patterns. 
+	3.3 - In this study, you will learn a bit about creating features out of time series data and formatting it for training.
+
+
++++++++++++++++++++++++++++++
+Project: Plagiarism Detection
++++++++++++++++++++++++++++++
+
+1 - building and deploying a plagiarism classification model. 
+2 - This project will test your ability to do [text] data processing and feature extraction, 
+    your ability to train and evaluate models according to an accuracy specification, and your ability to deploy a trained model to an endpoint.
+
+
+
+++++++++++++++++++++++++++++++++++++++++++
+Custom Models - Non-Linear Classification
+++++++++++++++++++++++++++++++++++++++++++
+1 - Adding on to what you have learned in the credit card fraud case study, 
+2 - you will learn how to manage cases where classes of data are not separable by a linear line. 
+3 - You'll train and deploy a custom, PyTorch neural network for classifying data.

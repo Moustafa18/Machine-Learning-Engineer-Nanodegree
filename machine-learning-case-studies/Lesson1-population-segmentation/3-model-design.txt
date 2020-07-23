@@ -1,0 +1,21 @@
+++++++++++++++++++++++
+active learning model
+++++++++++++++++++++++
+
+1 - unsupervised data ---> human --> human generated labels
+2 - unsupervised data ---> model --> model generated labels
+3 - active learning model learns from human generated labels
+
+
++++++++++
+sagemaker
+++++++++++
+it creates the two approches discussed before into one feature called ground truth 
+
+++++++++++++
+Ground truth
+++++++++++++
+1 - send sample of data to be labelled by human
+2 - create an unsupervised model
+3 - use the combination of human generated labels and active learning model to efficiently label the data
+4 - it reduces the time and the cost of labelling datasets by about 70%

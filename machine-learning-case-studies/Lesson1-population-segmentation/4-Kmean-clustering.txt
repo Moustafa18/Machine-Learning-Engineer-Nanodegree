@@ -1,0 +1,14 @@
+++++++++++++++++++
+K-Means Clustering
+++++++++++++++++++
+
+To perform population segmentation, 
+
+1 - k-means clustering to group data into similar clusters. 
+2 - k-means clustering algorithm can be broken down into a few steps assuming that you have n-dimensional data
+	2.1 - You select k, a predetermined number of clusters that you want to form. Then k points (centroids for k clusters) are selected at random locations in feature space. 
+	      and then For each point in your training dataset:
+		A - You find the centroid that the point is closest to 
+		B - And assign that point to that cluster
+		C - for each cluster centroid, you move that point such that it is in the center of all the points that are were assigned to that cluster in step B.
+		D - Repeat steps B and C until you’ve either reached convergence and points no longer change cluster membership _or_ until some specified number of iterations have been reached.

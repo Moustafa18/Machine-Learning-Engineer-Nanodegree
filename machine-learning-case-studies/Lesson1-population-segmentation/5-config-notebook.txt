@@ -1,0 +1,1 @@
+1 - change kernel to conda_mxnet_p36

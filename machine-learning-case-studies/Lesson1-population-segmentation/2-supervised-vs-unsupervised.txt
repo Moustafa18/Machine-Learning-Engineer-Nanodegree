@@ -1,0 +1,16 @@
+++++++++++
+supervised
+++++++++++
+1 - each input has a label
+2 - create a model by training it (classification)
+3 - purpose: get higher accuracy on testing model with different data
+
+++++++++++++
+unsupervised
+++++++++++++
+1 - each input does not have a label
+2 - create a model (clustering)
+3 - accuracy is not our metric such that we get the distance or the similarity between the test input and model cluster
+4 - used in simple project like specify car not car model but you can use specific classification model
+
+
