@@ -1,0 +1,27 @@
+++++++++++++++++++++++++++++++++++
+Principal Component Analysis (PCA)
+++++++++++++++++++++++++++++++++++
+1 - it attempts to reduce the number of features within a dataset while retaining the “principal components”, 
+    which are defined as weighted combinations of existing features that:
+	1.1 - Are uncorrelated with one another, so you can treat them as independent features, and
+	1.2 - Account for the largest possible variability in the data!
+
+2 - So, depending on how many components we want to produce, the first one will be responsible for the largest variability 
+on our data and the second component for the second-most variability, and so on. Which is exactly 
+what we want to have for clustering purposes!
+
+
+3 - PCA is commonly used when you have data with many many features.
+
+4 - PCA make a linear comcination of the existing feature to increase the variation on data
+
+The idea is that components that cause a larger variance will help us to better differentiate 
+between data points and (therefore) better separate data into clusters.
+
+the result will be the eigen vector which has the largest variance of the data
+
++++++++++++++++
+# of components 
++++++++++++++++
+1- apply pca model on more feature and then select the top
+2- specify vaiance = sigma(s(1,n)^2)/sigma(s(1,:)^2)

@@ -1,0 +1,49 @@
+++++++
+Data
+++++++
+1 - 0.17% of data is fraud
+2 - 0.83% of data is valid
+
+
++++++++++++++++++++++++
+Apply linear classifier
++++++++++++++++++++++++
+1 - Accuracy = (TP + TN) / (TP + TN + FP + FN) = 
+2 - Recall = TP / (TP + FN) = 
+3 - precision = TP / (TP + FN) = 
+
+
+++++++++
+problems
+++++++++
+
+1 - Due to the imbalance of the data accurasy will stay high
+2 - change the metric not accaurcy only
+
+++++++++
+solution
+++++++++
+1 - Model tunning: means optimizing model yusing specific metric
+2 - Manage class inbalance
+
++++++++++++++
+Model tunning
++++++++++++++
+1 - A bank has asked you to build a model that detects cases of fraud (1) with an accuracy of about 85% so that we 
+    need to decrease false negative and increase true positive at all we need to increase recall as a metric.
+2 - binary_classifier_model_selection_criteria:
+	2.1 - accuracy
+	2.2 - f1
+	2.3 - f_beta
+	2.4 - precision_at_target_recall
+	2.5 - recall_at_target_precision
+	2.6 - cross_entropy_loss
+	2.7 - loss_function
+
+++++++++++++++++++++++
+Manage class inbalance
+++++++++++++++++++++++
+1 - it may bias our model to predict all transaction for the higher one valid (0) so 
+2 - it will increase true negative and false negative
+3 - positive_example_weight_mult: weight assigned to positive (1, fraudulent) examples and 
+    The weight of negative examples (0, valid) is fixed at 1 may be assigned to 'balanced' to balance data
