@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <style>
+            /* Style the body */
+            body {
+              font-family: Arial;
+              margin: 0;
+            }
+            
+            /* Header/Logo Title */
+            .header {
+              padding: 30px;
+              text-align: center;
+              background: #1abc9c;
+              color: white;
+              font-size: 20px;
+            }
+            
+            /* Page Content */
+            .content {padding:20px;}
+            
+            /* Create two unequal columns that sits next to each other */
+            /* Sidebar/left column */
+            .side {
+              -ms-flex: 30%; /* IE10 */
+              flex: 30%;
+              background-color: #f1f1f1;
+              padding: 20px;
+            }
+            
+            /* Main column */
+            .main {   
+              -ms-flex: 70%; /* IE10 */
+              flex: 70%;
+              background-color: white;
+              padding: 20px;
+            }
+            
+            /* Fake image, just for this example */
+            .fakeimg {
+              background-color: #aaa;
+              width: 100%;
+              padding: 20px;
+            }
+        </style>
         <title>Sentiment Analysis Web App</title>
         <meta charset="utf-8">
         <meta name="viewport"  content="width=device-width, initial-scale=1">
@@ -16,11 +59,9 @@
                  var result = parseFloat(xhr.responseText);
                  var resultElement = document.getElementById('result');
                  if (result == 0) {
-                     resultElement.className = 'bg-danger';
-                     resultElement.innerHTML = 'Your review was NEGATIVE!';
+                     resultElement.innerHTML = 'Your review was negative!';
                  } else {
-                     resultElement.className = 'bg-success';
-                     resultElement.innerHTML = 'Your review was POSITIVE!';
+                     resultElement.innerHTML = 'Your review was positive!';
                  }
              }
              xhr.open (oFormElement.method, oFormElement.action, true);
@@ -34,18 +75,23 @@
     <body>
 
         <div class="container">
-            <h1>Is your review positive, or negative?</h1>
-            <p>Enter your review below and click submit to find out...</p>
-            <form method="POST"
-                  action="**REPLACE WITH PUBLIC API URL**"
-                  onsubmit="return submitForm(this);" >                     <!-- HERE IS WHERE YOU NEED TO ENTER THE API URL -->
-                <div class="form-group">
-                    <label for="review">Review:</label>
-                    <textarea class="form-control"  rows="5" id="review">Please write your review here.</textarea>
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
-            <h1 class="bg-success" id="result"></h1>
+            <div class = header>
+                <h1>Welcome Reviewer</h1>
+            </div>
+            <div class="side">
+                <h5>Enter your review about Movie and click submit to find out..</h5>
+                <form method="POST"
+                  action="https://s3hjcggno2.execute-api.us-east-2.amazonaws.com/prod"
+                  
+                  onsubmit="return submitForm(this);" > 
+                    <textarea class="form-control"  rows="5" id="review" placeholder="Please write your review here." color = "blue"></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+
+                <h1 id="result"></h1>
+            </div>    
+           
         </div>
     </body>
 </html>

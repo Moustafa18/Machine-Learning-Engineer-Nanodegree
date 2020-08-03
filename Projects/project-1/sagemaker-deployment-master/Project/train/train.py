@@ -66,7 +66,42 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
     loss_fn      - The loss function used for training.
     device       - Where the model and data should be loaded (gpu or cpu).
     """
-    
+    for epoch in range(1, epochs + 1):
+        model.train()
+        total_loss = 0
+        for batch in train_loader:         
+            batch_X, batch_y = batch
+            
+            batch_X = batch_X.to(device)
+            batch_y = batch_y.to(device)
+            
+            # TODO: Complete this train method to train the model provided.
+            
+            # Before the backward pass, use the optimizer object to zero all of the
+            # gradients for the variables it will update (which are the learnable
+            # weights of the model). This is because by default, gradients are
+            # accumulated in buffers( i.e, not overwritten) whenever .backward()
+            # is called. Checkout docs of torch.autograd.backward for more details.
+            optimizer.zero_grad()
+
+            # Forward pass: compute predicted y by passing x to the model.
+            out = model.forward(batch_X)
+            
+            # Compute and print loss.
+            loss = loss_fn(out,batch_y)
+            
+            # Backward pass: compute gradient of the loss with respect to model
+            # parameters
+            loss.backward()
+            
+            # Calling the step function on an Optimizer makes an update to its
+            # parameters
+            optimizer.step()
+            
+            total_loss += loss.data.item()
+
+            
+        print("Epoch: {}, BCELoss: {}".format(epoch, total_loss / len(train_loader)))    
     # TODO: Paste the train() method developed in the notebook here.
 
     pass

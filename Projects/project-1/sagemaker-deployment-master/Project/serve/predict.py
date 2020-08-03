@@ -10,6 +10,8 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.utils.data
+import boto3
+
 
 from model import LSTMClassifier
 
@@ -72,7 +74,8 @@ def predict_fn(input_data, model):
 
     data_X = None
     data_len = None
-
+    data_X, data_len = convert_and_pad(model.word_dict, review_to_words(input_data))
+    
     # Using data_X and data_len we construct an appropriate input tensor. Remember
     # that our model expects input data of the form 'len, review[500]'.
     data_pack = np.hstack((data_len, data_X))
@@ -83,10 +86,13 @@ def predict_fn(input_data, model):
 
     # Make sure to put the model into evaluation mode
     model.eval()
-
+    
     # TODO: Compute the result of applying the model to the input data. The variable `result` should
     #       be a numpy array which contains a single integer which is either 1 or 0
+    with torch.no_grad():
+        out = model.forward(data)
 
-    result = None
-
+    result = np.round(out.numpy())
+    
+    
     return result
