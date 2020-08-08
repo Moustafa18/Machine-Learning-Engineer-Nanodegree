@@ -46,7 +46,7 @@ def _get_train_loader(batch_size, data_dir):
     print("Get data loader.")
 
     # read in csv file
-    train_data = pd.read_csv(os.path.join(data_dir, "train.csv"), header=None)
+    train_data = pd.read_csv(os.path.join(data_dir, "train.csv"), header=None, names=None)
 
     # labels are first column
     train_y = torch.from_numpy(train_data[[0]].values).float().squeeze()
@@ -75,8 +75,8 @@ def train(model, train_loader, epochs, optimizer, criterion, device):
     for epoch in range(1, epochs + 1):
         model.train()
         total_loss = 0
-        for batch_idx, (data, target) in enumerate(train_loader, 1):
-            # prep data
+        #for batch_idx, (data, target) in enumerate(train_loader, 1):
+        for data, target in train_loader: # prep data
             data, target = data.to(device), target.to(device)
             optimizer.zero_grad() # zero accumulated gradients
             # get output of SimpleNet
@@ -91,7 +91,7 @@ def train(model, train_loader, epochs, optimizer, criterion, device):
         # print loss stats
         print("Epoch: {}, Loss: {}".format(epoch, total_loss / len(train_loader)))
 
-    # save trained model, after all epochs
+    # save after all epochs
     save_model(model, args.model_dir)
 
 
@@ -140,16 +140,17 @@ if __name__ == '__main__':
   
     ## TODO: Add args for the three model parameters: input_dim, hidden_dim, output_dim
     # Model parameters
-    parser.add_argument('--input_dim', type=int, default=2, metavar='IN',
-                        help='number of input features to model (default: 2)')
-    parser.add_argument('--hidden_dim', type=int, default=10, metavar='H',
-                        help='hidden dim of model (default: 10)')
-    parser.add_argument('--output_dim', type=int, default=1, metavar='OUT',
-                        help='output dim of model (default: 1)')
 
+    parser.add_argument('--input_dim', type=int,  default=2 ,metavar='I',
+                        help='inpute dimension (default: 2)')
+    parser.add_argument('--hidden_dim', type=int, default=512, metavar='H',
+                        help='hidden dimension (default: 512)')
+    parser.add_argument('--output_dim', type=int, default=1, metavar='O',
+                        help='putput of the NN (default: 1)')
     
     args = parser.parse_args()
 
+    # cudo used to support GPU
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # set the seed for generating random numbers
@@ -170,12 +171,17 @@ if __name__ == '__main__':
     save_model_params(model, args.model_dir)
 
     ## TODO: Define an optimizer and loss function for training
-    optimizer = optim.Adam(model.parameters(), lr=args.lr)
+    
+    # specify loss function (categorical cross-entropy)
+    # because the output is 1
     criterion = nn.BCELoss()
+
+    # we can use stichastic gradiaent descend
+    # specify optimizer (stochastic gradient descent) and learning rate = 0.01
+    optimizer = optim.Adam(model.parameters(), lr=args.lr)
 
     
     # Trains the model (given line of code, which calls the above training function)
     # This function *also* saves the model state dictionary
     train(model, train_loader, args.epochs, optimizer, criterion, device)
-    
     
